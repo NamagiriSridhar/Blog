@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+	<head>
+				<link th:replace="fragments/styling::head-style">
+		
+	</head>
+	<body class="m-5">
+		<div th:replace="fragments/styling::header"></div>
+		<h1>Update blog post</h1>
+				<a th:href="@{/}">Go home</a>
+		
+		<form th:method="put" th:object="${blog}">
+			<input type="text" th:field="*{title}"/>
+			<input type="text" th:field="*{content}"/>
+			<button>Update Data</button>
+		</form>
+				<div th:replace="fragments/styling::body-style"></div>
+		
+	</body>
+</html>

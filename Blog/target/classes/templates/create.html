@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+	<head>
+		<link th:replace="fragments/styling::head-style">
+	</head>
+	<body class="m-5">
+		<div th:replace="fragments/styling::header"></div>
+		<h1>Create a blog post</h1>
+		<a th:href="@{/}">Go home</a>
+		<form method="post" th:object="${blog}">
+			<input type="text" placeholder="Enter title" th:field= "*{title}"/>
+			<input type="text" placeholder="Enter content" th:field= "*{content}"/>
+			<button>Submit my post</button>
+		</form>
+				<div th:replace="fragments/styling::body-style"></div>
+		
+	</body>
+</html>

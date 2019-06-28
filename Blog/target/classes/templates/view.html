@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+			<link th:replace="fragments/styling::head-style">
+	
+</head>
+<body class="m-5">
+		<div th:replace="fragments/styling::header"></div>
+				<a th:href="@{/}">Go home</a>
+		
+	<div th:each="blog: ${blogs}">
+		<p th:text="${blog.title}"></p>
+		<p th:text="${blog.content}"></p>
+		<a th:href="@{'/update/{id}' (id=${blog.id})}" >update</a>
+		<!-- since we have to go to a different page for edit, we use anchor here & form in update.html
+		
+		We dont have to go to a different page for delete.so we use form here -->
+	<!-- 	<a th:href="@{'/delete/{id}' (id=${blog.id})}" >delete</a>//Uses  get mapping below uses delete mapping --> 
+	<form th:method="delete" th:action="@{'/delete/{id}' (id=${blog.id})}">
+		<button>Delete</button>
+	</form>
+		<hr>
+	</div>
+			<div th:replace="fragments/styling::body-style"></div>
+	
+</body>
+</html>

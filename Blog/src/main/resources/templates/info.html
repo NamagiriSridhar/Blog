@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+	<head>
+				<link th:replace="fragments/styling::head-style">
+		
+	</head>
+	<body class="m-5">
+		<div th:replace="fragments/styling::header"></div>
+		<h1>Data changed</h1>
+				<a th:href="@{/}">Go home</a>
+		
+		<p th:text="${blog.id}"></p>
+		<p th:text="${blog.title}"></p>
+		<p th:text="${blog.content}"></p>
+				<div th:replace="fragments/styling::body-style"></div>
+		
+	</body>
+</html>

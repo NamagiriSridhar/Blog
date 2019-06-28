@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+	<head >
+		<link th:replace="fragments/styling::head-style">
+	</head>
+	<body class="m-5">
+		<div th:replace="fragments/styling::header"></div>
+		<a th:href="@{/create}">Create a blog post</a>
+		<a th:href="@{/view}">View all blog posts</a> 
+		<div th:replace="fragments/styling::body-style"></div>
+	</body>
+</html>
